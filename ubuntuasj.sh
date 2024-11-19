@@ -29,15 +29,15 @@ network:
   renderer: networkd
   ethernets:
     eth0:
-     dhcp4: true
+      dhcp4: true
     eth1:
-     dhcp4: no
-   vlans:
+      dhcp4: no
+  vlans:
     eth1.10:
       id: 10
       link: eth1
       addresses:
-       - 192.168.34.1/24
+        - 192.168.34.1/24
       
 EOF
 # Terapkan Konfigurasi Netplan
