@@ -8,13 +8,18 @@ NC='\033[0m'
 # Fungsi untuk pesan sukses dan gagal
 success_message() { echo -e "${GREEN}$1 berhasil!${NC}"; }
 error_message() { echo -e "\033[1;31m$1 gagal!${NC}"; exit 1; }                                  
-      _         _                            
+
+# Menampilkan pesan awal clear
+cat << EOT >
+
      (_)       | |                           
  ___  _  _ __  | |_   __ _                   
 / __|| || '_ \ | __| / _` |                  
 \__ \| || | | || |_ | (_| |                  
-|___/|_||_| |_| \__| \__,_|                  
-                                                                                                     
+|___/|_||_| |_| \__| \__,_|           
+
+EOT
+
 # Otomasi Dimulai
 echo "Otomasi Dimulai"
 
