@@ -78,26 +78,26 @@ set -e
 
 # Menampilkan pesan awal
 clear
-cat << EOF
+cat << EOT
    ____ _______ ____  __  __           _____ _____ _   _ _______       
   / __ \__   __/ __ \|  \/  |   /\    / ____|_   _| \ | |__   __|/\    
  | |  | | | | | |  | | \  / |  /  \  | (___   | | |  \| |  | |  /  \   
  | |  | | | | | |  | | |\/| | / /\ \  \___ \  | | | . ` |  | | / /\ \  
  | |__| | | | | |__| | |  | |/ ____ \ ____) |_| |_| |\  |  | |/ ____ \ 
   \____/  |_|  \____/|_|  |_/_/    \_\_____/|_____|_| \_|  |_/_/    \_\
-EOF
+EOT
 sleep 5
 echo "Inisialisasi awal ..."
 
 # Menambahkan repositori Kartolo
 echo "Menambahkan repositori Kartolo..."
-cat <<EOF | sudo tee /etc/apt/sources.list > /dev/null 
+cat <<EOT | sudo tee /etc/apt/sources.list > /dev/null 
 deb http://kartolo.sby.datautama.net.id/ubuntu/ focal main restricted universe multiverse 
 deb http://kartolo.sby.datautama.net.id/ubuntu/ focal-updates main restricted universe multiverse
 deb http://kartolo.sby.datautama.net.id/ubuntu/ focal-security main restricted universe multiverse
 deb http://kartolo.sby.datautama.net.id/ubuntu/ focal-backports main restricted universe multiverse
 deb http://kartolo.sby.datautama.net.id/ubuntu/ focal-proposed main restricted universe multiverse
-EOF
+EOT
 
 # Cek keberhasilan menambahkan repositori
 check_status "Menambahkan Repositori"
@@ -113,7 +113,7 @@ check_status "Menginstall Package Yang Diperlukan"
 
 # Konfigurasi Pada Netplan
 echo "Mengonfigurasi Netplan..."
-cat <<EOF | sudo tee /etc/netplan/01-netcfg.yaml > /dev/null
+cat <<EOT> | sudo tee /etc/netplan/01-netcfg.yaml > /dev/null
 network:
   version: 2
   renderer: networkd
@@ -127,7 +127,7 @@ network:
        id: 34
        link: eth1
        addresses: [$IP_Router$IP_Pref]
-EOF
+EOT
 
 # Cek keberhasilan konfigurasi Netplan
 check_status "Konfigurasi Netplan"
