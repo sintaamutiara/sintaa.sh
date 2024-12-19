@@ -18,8 +18,6 @@ cat << EOT >
 \__ \| || | | || |_ | (_| |                  
 |___/|_||_| |_| \__| \__,_|           
 
-EOT
-
 # Otomasi Dimulai
 echo "Otomasi Dimulai"
 
