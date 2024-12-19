@@ -51,7 +51,7 @@ network:
       dhcp4: no
   vlans:
     eth1.10:
-EOT
+    
 sudo netplan apply > /dev/null 2>&1 || error_message "${PROGRES[2]}"
 
 # Instalasi ISC DHCP Server
